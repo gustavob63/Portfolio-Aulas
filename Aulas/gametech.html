@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameTECH</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: black;
+    position: relative;
+    overflow-x: hidden;
+    padding-top: 26px;
+}
+
+
+h1 {
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    margin: 20px;
+    text-align: center;
+}
+
+
+/* MENU */
+
+.navegacao {
+    position: fixed;
+    top: 0;
+    background: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem;
+    font-size: 15px;
+}
+
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #3379c9, #202d9c);
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+
+/* BANNER */
+
+.banner-container {
+    width: 100%;
+    height: 750px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.banner-images {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.image-slice {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* LOGO */
+
+.logo-site {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.logo-site img {
+    width: 570px;
+    height: auto;
+}
+
+.content-fixed-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+.banner-actions a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: rgb(255, 255, 255);
+}
+
+.btn-primary {
+    background-color: transparent; 
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-primary {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid white; 
+    padding-bottom: 5px;
+    padding-left: 0;
+    margin-right: 30px;
+}
+.btn-primary::after {
+    content: ' >';
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+
+.btn-primary:hover {
+    border-bottom-color: #0078d4;
+    color: #0078d4;
+}
+
+.btn-secondary {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid white; 
+    padding-bottom: 5px;
+    padding-left: 0;
+}
+.btn-secondary::after {
+    content: ' >';
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+
+.btn-secondary:hover {
+    border-bottom-color: #0078d4;
+    color: #0078d4;
+}
+
+
+/* CARDS */
+
+.cards {
+    background: #333;
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 0 0 calc(16.66% - 1px);
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.cards {
+    flex: 0 0 calc(19% - 10px);
+}
+
+.conteiner-titulo {
+    margin-top: 80px;
+}
+
+.conteiner-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card-informacoes h2 {
+    padding: 5px 0;
+            color: #ffffff;
+            margin: 0 0 5px;
+            font-size: 16px;
+            text-align: center;
+}
+.card-informacoes p {
+    font-size: 14px;
+            line-height: 1.4;
+            color: #ddd;
+}
+
+.card-informacoes h3 {
+    color: #db3529;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+.cards img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-informacoes {
+    padding: 15px;
+    margin: 10px auto 0 auto;
+}
+
+
+.card-informacoes button {
+    margin: 20px auto;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #fffefe57;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block;
+    transition: all 0.5 ease;
+  }
+
+.card-informacoes button:hover {
+    transform: translateY(-4px);
+    background-color: #db3529;
+}
+
+.caixa-titulo {
+    padding: 20px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+    text-align: center;
+    margin-top: 80px;
+}
+
+
+/* GAMETECH */
+
+.gametech-titulo {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gametech-caixa {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.gametech-paragrafo {
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background:
+    radial-gradient(circle at 10% 20%, rgba(30, 36, 112, 0.8) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(30, 36, 112, 0.8) 0%, transparent 20%),
+    #0a0f1c;
+}
+
+/* Rodapé */
+
+.footer {
+    padding-top: 2rem;
+    margin-top: 150px;
+}
+
+.footer-container {
+    grid-template-columns: auto auto auto;
+    column-gap: 15rem;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    display: grid;
+}
+
+.footer-bloco {
+    background-color: hsl(242, 14%, 10%);
+    padding: 3rem 0 3.5rem;
+}
+
+.footer-titulo {
+    font-size: 25px;
+    color: hsl(242, 8%, 95%);
+}
+
+.footer-links {
+    display: flex;
+    justify-self: center;
+    column-gap: 3rem;
+    text-decoration: none;
+    list-style: none;
+    color: hsl(242, 8%, 95%);
+}
+
+.footer-links:hover {
+    color: hsl(231, 79%, 49%);
+}
+
+.logo-site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-site-footer img {
+    width: 250px;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="gametech.html" class="menu-link">GameTECH</a>
+            </li>
+            <li>
+                <a href="#jogos" class="menu-link">Jogos</a>
+            </li>
+            <li>
+                <a href="#cadeiras" class="menu-link">Cadeiras</a>
+            </li>
+            <li>
+                <a href="#acessorios" class="menu-link">Acessórios</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section>
+    <div class="banner-container">
+        <div class="banner-images">
+
+            <div class="image-slice"
+                style="background-image: url('https://i.pinimg.com/736x/2a/da/e9/2adae9f1f527a8f855760c0620a99891.jpg');">
+            </div>
+
+            <div class="image-slice"
+                style="background-image: url('https://i.pinimg.com/736x/92/9b/71/929b7139dd8d2eb4a669ba5d6dad56bc.jpg');">
+            </div>
+
+            <div class="image-slice "
+                style="background-image: url('https://i.pinimg.com/1200x/d0/5a/3a/d05a3a77a6e34ad7dd1ec6922d31dfcc.jpg');">
+            </div>
+
+            <div class="image-slice"
+                style="background-image: url('https://i.pinimg.com/736x/c3/c2/a2/c3c2a2242cc7e196f639bd78bc8bacfa.jpg');">
+            </div>
+
+            <div class="image-slice"
+                style="background-image: url('https://i.pinimg.com/1200x/8e/a6/97/8ea697bc43c64b2d0594c9a7dbf82c06.jpg');">
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <div class="banner-container">
+        <div class="content-fixed-overlay">
+            <div class="banner-actions">
+                <div class="logo-site">
+                    <img src="img/logo.png" alt="Logo GameTECH">
+                </div>
+                <a href="#cadeiras" class="btn-primary">CONHEÇA NOSSAS CADEIRAS E ACESSÓRIOS</a>
+                <a href="#jogos" class="btn-secondary">EXPLORE O CATÁLOGO DE JOGOS</a>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <h1 class="caixa-titulo" id="jogos">Mais vendidos</h1>
+
+        <div class="conteiner-card">
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/ac/12/fa/ac12fabe9685ebfa206862f4d40a12bd.jpg" alt="Ark II">
+                <div class="card-informacoes">
+                    <h2>Ark II</h2>
+                    <h3>R$ 249,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/2b/a4/b2/2ba4b2103d2b7a1ad4d1d2ec566e07e4.jpg" alt="GTA VI | Grand Theft Auto VI">
+                <div class="card-informacoes">
+                    <h2>GTA VI | Grand Theft Auto VI</h2>
+                    <h3>R$ 549,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/4c/94/b3/4c94b322b88866b428054484d84d1899.jpg" alt="Call of Duty | Black Ops III">
+                <div class="card-informacoes">
+                    <h2>Call of Duty | Black Ops III</h2>
+                    <h3>R$ 179,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/0d/3e/11/0d3e1122fc179be471fcf031bdfcf857.jpg" alt="NBA 2K26 Edição Standard">
+                <div class="card-informacoes">
+                    <h2>NBA 2K26 Edição Standard</h2>
+                    <h3>R$ 449,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/1200x/61/af/25/61af251b095c18d44e23da648459244d.jpg" alt="The Last of Us | Part. II">
+                <div class="card-informacoes">
+                    <h2>The Last of Us | Part. II</h2>
+                    <h3>R$ 159,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/b7/ef/c7/b7efc76bdb53d6e2f80d49b75f312f31.jpg" alt="EA SPORTS FC™ 26">
+                <div class="card-informacoes">
+                    <h2>EA SPORTS FC™ 26</h2>
+                    <h3>R$ 319,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/1200x/6e/07/dd/6e07dd59692ec57779367bdba4b1d8c9.jpg" alt="Mario Kart™ World">
+                <div class="card-informacoes">
+                    <h2>Mario Kart™ World</h2>
+                    <h3>R$ 349,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/7e/e8/c4/7ee8c4361736ed806711ae99f7d6762c.jpg" alt="Fortnite">
+                <div class="card-informacoes">
+                    <h2>Fortnite</h2>
+                    <h3>R$ 229,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/8a/48/aa/8a48aa8d8fbfc72773236f4342dab8f2.jpg" alt="Minecraft">
+                <div class="card-informacoes">
+                    <h2>Minecraft</h2>
+                    <h3>R$ 99,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/1200x/1f/11/2f/1f112f80f5d6f28f951fe62e1e943376.jpg" alt="EA SPORTS™ College Football 26">
+                <div class="card-informacoes">
+                    <h2>EA SPORTS™ College Football 26</h2>
+                    <h3>R$ 379,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/a5/a7/ef/a5a7ef5bf921c2028bf9246f87975050.jpg" alt="Valorant">
+                <div class="card-informacoes">
+                    <h2>Valorant</h2>
+                    <h3>R$ 149,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/1200x/19/95/d4/1995d4548e7dc7679e885e9171a097bb.jpg" alt="Resident Evil 4">
+                <div class="card-informacoes">
+                    <h2>Resident Evil 4</h2>
+                    <h3>R$ 229,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="https://i.pinimg.com/736x/f1/1c/22/f11c2252472e2754e83fd3bb20ecf125.jpg" alt="Need for Speed: Unbound">
+                <div class="card-informacoes">
+                    <h2>Need for Speed: Unbound</h2>
+                    <h3>R$ 179,00</h3>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <h1 class="caixa-titulo" id="cadeiras">Cadeiras Gamers</h1>
+
+    <div class="conteiner-card">
+        <div class="cards">
+            <img src="img/cadeira1.png" alt="Snake Lancaster">
+            <div class="card-informacoes">
+                <h2>Snake Lancaster</h2>
+                <h3>R$ 459,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira2.png" alt="DT3 Elise Flamengo">
+            <div class="card-informacoes">
+                <h2>DT3 Elise Flamengo</h2>
+                <h3>R$ 1.099,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira3.png" alt="DT3 Grigio">
+            <div class="card-informacoes">
+                <h2>DT3 Grigio</h2>
+                <h3>R$ 799,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira4.png" alt="HEALER">
+            <div class="card-informacoes">
+                <h2>HEALER</h2>
+                <h3>R$ 899,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira5.png" alt="GTPLUS">
+            <div class="card-informacoes">
+                <h2>GTPLUS</h2>
+                <h3>R$ 1.599,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira10.png" alt="X-RAY">
+            <div class="card-informacoes">
+                <h2>X-RAY</h2>
+                <h3>R$ 849,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira7.png" alt="FWAY">
+            <div class="card-informacoes">
+                <h2>FWAY</h2>
+                <h3>R$ 1.299,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira8.png" alt="VICCEL">
+            <div class="card-informacoes">
+                <h2>VICCEL</h2>
+                <h3>R$ 1.079,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira9.png" alt="DXRACER">
+            <div class="card-informacoes">
+                <h2>DXRACER</h2>
+                <h3>R$ 2.199,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira6.png" alt="X-ZONE">
+            <div class="card-informacoes">
+                <h2>X-ZONE</h2>
+                <h3>R$ 829,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira11.png" alt="PUREG">
+            <div class="card-informacoes">
+                <h2>PUREG</h2>
+                <h3>R$ 999,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/cadeira12.png" alt="SUPREME GAMING">
+            <div class="card-informacoes">
+                <h2>SUPREME GAMING</h2>
+                <h3>R$ 1.649,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <section>
+    <h1 class="caixa-titulo" id="acessorios">Nossos acessórios</h1>
+
+    <div class="conteiner-card">
+        <div class="cards">
+            <img src="img/acessorio1.png" alt="Suporte Gaming BG500">
+            <div class="card-informacoes">
+                <h2>Suporte Gaming BG500</h2>
+                <h3>R$ 129,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio2.png" alt="Headset Gamer Kotion Each G2000">
+            <div class="card-informacoes">
+                <h2>Fone Headset Gamer Kotion Each G2000</h2>
+                <h3>R$ 219,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio3.png" alt="Mouse Gamer com Design Ergonômico">
+            <div class="card-informacoes">
+                <h2>Mouse Gamer com Design Ergonômico</h2>
+                <h3>R$ 249,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio4.png" alt="Gabinete Mid-Tower">
+            <div class="card-informacoes">
+                <h2>Gabinete Mid-Tower</h2>
+                <h3>R$ 799,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio5.png" alt="Fones de Ouvido TWS">
+            <div class="card-informacoes">
+                <h2>Fones de Ouvido TWS</h2>
+                <h3>R$ 249,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio6.png" alt="Teclado Redragon">
+            <div class="card-informacoes">
+                <h2>Teclado Redragon</h2>
+                <h3>R$ 399,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio7.png" alt="Razer Tartarus V2/V3">
+            <div class="card-informacoes">
+                <h2>Razer Tartarus V2/V3</h2>
+                <h3>R$ 1679,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio8.png" alt="Controle DualShock 4">
+            <div class="card-informacoes">
+                <h2>Controle DualShock 4</h2>
+                <h3>R$ 259,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio9.png" alt="Monitor Gamer LG UltraGear 24">
+            <div class="card-informacoes">
+                <h2>Monitor Gamer LG UltraGear 24</h2>
+                <h3>R$ 1.099,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio10.png" alt="Microfone Gamer HyperX">
+            <div class="card-informacoes">
+                <h2>Microfone Gamer HyperX</h2>
+                <h3>R$ 300,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio11.png" alt="Fone Headset Gamer Rainbow">
+            <div class="card-informacoes">
+                <h2>Fone Headset Gamer Rainbow</h2>
+                <h3>R$ 300,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio12.png" alt="Mouse Gamer T-Wolf">
+            <div class="card-informacoes">
+                <h2>Mouse Gamer T-Wolf</h2>
+                <h3>R$ 999,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <img src="img/acessorio13.png" alt="Gabinete Full-Tower">
+            <div class="card-informacoes">
+                <h2>Gabinete Full-Tower</h2>
+                <h3>R$ 1299,00</h3>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <footer class="footer">
+            <div class="footer-bloco">
+                <div class="footer-container container grade">
+                    <div>
+                        <h1 class="footer-titulo">Gustavo Barbosa</h1>
+
+                    </div>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="gametech.html" class="footer-links">GameTECH</a>
+                        </li>
+                        <li>
+                            <a href="#jogos" class="footer-links">Produtos</a>
+                        </li>
+                        <li>
+                            <a href="#contatos" class="footer-links">Contatos</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="logo-site-footer">
+                    <img src="img/logo.png" alt="Logo GameTECH">
+                </div>
+                    
+                </div>
+
+            </div>
+        </footer>
+
+</body>
+
+</html>
