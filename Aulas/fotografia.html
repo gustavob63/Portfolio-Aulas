@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotógrafo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            background-color: rgba(178, 223, 213, 0.712);
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        .titulo {
+            color: rgb(255, 255, 255);
+            font-size: 2.75rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .titulo::before {
+            content: attr(data-heading);
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: hsl(273, 76%, 69%);
+        }
+
+        h2 {
+            color: white;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .inicio-bloco {
+            background-color: hsl(242, 14%, 10%);
+            padding: 3rem 0 3.5rem;
+        }
+
+        .foto-de-perfil-container {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .foto-de-perfil-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 50%;
+            z-index: -1;
+            border: none;
+        }
+
+        .foto-de-perfil-container img {
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        .card {
+            border-radius: 0px;
+            overflow: hidden;
+            width: 550px;
+            flex: 0 0 auto;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.788);
+        }
+
+        .card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-title {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        .card-text {
+            color: white;
+        }
+
+        .audio-container {
+            display: block;
+            width: 55%;
+            margin: 0 auto;
+        }
+
+        .footer {
+            padding-top: 2rem;
+            margin-top: 150px;
+        }
+
+        .footer-container {
+            grid-template-columns: auto 1fr auto;
+            column-gap: 5rem;
+            justify-content: space-between;
+        }
+
+        .footer-bloco {
+            background-color: hsl(242, 14%, 10%);
+            padding: 3rem 0 3.5rem;
+        }
+
+        .footer-bloco i {
+            display: block;
+        }
+
+        .footer-titulo {
+            text-align: center;
+            font-size: 22px;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inicio-bloco">
+
+        <div class="foto-de-perfil-container">
+            <img src="https://img.freepik.com/fotos-gratis/jovem-atraente-homem-afro-americano-sorridente-segurando-a-camera-digital-olhando_171337-1344.jpg?semt=ais_hybrid&w=740&q=80"
+                alt="Douglas Matos">
+        </div>
+
+        <h1 class="titulo" data-heading="Fotógrafo">DOUGLAS MATOS</h1>
+        <h2>Fotógrafo profissional de Brasília. Veja algumas fotos tiradas por mim e conheça um pouco do meu trabalho.
+        </h2>
+    </div>
+
+    <div class="cards-container">
+
+        <div class="card">
+            <div id="carouselExample1" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://storage.alboom.ninja/sites/40743/albuns/805770/_1_dsc_3022.jpg?t=1616198669"
+                            class="d-block w-100" alt="Imagem 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/40743/albuns/805770/_10_dsc_2844.jpg?t=1616198681"
+                            class="d-block w-100" alt="Imagem 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/752/albuns/1344713/dai_2180.jpg?t=1715801203"
+                            class="d-block w-100" alt="Imagem 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/752/albuns/1344713/lsc_5982.jpg?t=1715801371"
+                            class="d-block w-100" alt="Imagem 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://digitaleventos.com.br/wp-content/uploads/2022/03/RO3_4988-scaled.jpg"
+                            class="d-block w-100" alt="Imagem 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://digitaleventos.com.br/wp-content/uploads/2022/03/RO3_4968-scaled.jpg"
+                            class="d-block w-100" alt="Imagem 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/835/albuns/1197640/festa_de_quinze_anos_da_luany_em_caratinga-18.jpg?t=1687010187"
+                            class="d-block w-100" alt="Imagem 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/835/albuns/1197640/festa_de_quinze_anos_da_luany_em_caratinga-14.jpg?t=1687010175"
+                            class="d-block w-100" alt="Imagem 8">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Aniversários de 15 anos</h5>
+                <p class="card-text">O sonho que vira realidade. Celebre a magia de ser quem você é.</p>
+            </div>
+            <div class="audio-container">
+                <audio controls>
+                    <source src="../Audios/audio1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="card">
+            <div id="carouselExample2" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://storage.alboom.ninja/sites/1272/albuns/1337303/fotos-de-formatura-mirante-dona-marta-fotografia-afetiva-aline-lelles-fotografa-rj-fotos-rio-de-janeiro-002.jpg?t=1714401034"
+                            class="d-block w-100" alt="Imagem 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/1272/albuns/1156522/ucam-fotografia-de-formatura-retratos-de-formandos-aline-lelles-fotografia-afetiva-fotos-para-colacao-de-grau-cadeira-anel-de-formatura-beca-rio-de-janeiro-18.jpg?t=1680100235"
+                            class="d-block w-100" alt="Imagem 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/4054/albuns/634047/_leandro_rodrigues__5_de_50_.jpg?t=1586810940"
+                            class="d-block w-100" alt="Imagem 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://blog.sinaxys.com/wp-content/uploads/2021/11/formatura-de-medicina-formando.jpg"
+                            class="d-block w-100" alt="Imagem 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.freepik.com/fotos-premium/alunos-felizes-e-diversos-se-formando-na-universidade-celebrando-com-diplomas_53876-148599.jpg"
+                            class="d-block w-100" alt="Imagem 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.freepik.com/fotos-premium/retrato-de-graduados-multirraciais-detentor-de-diploma-e-fazendo-selfie-no-telefone-lifestule_115086-212.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="d-block w-100" alt="Imagem 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.freepik.com/fotos-premium/o-grupo-de-formatura-e-a-visao-traseira-dos-alunos-comemoram-o-sucesso-educacional-atras-dos-graduados-entusiasmados-na-celebracao-do-campus-para-o-premio-universitario-de-objetivos-de-estudo-e-a-motivacao-de-aprendizado-para-um-futuro-feliz_590464-130999.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="d-block w-100" alt="Imagem 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.freepik.com/fotos-premium/formatura-do-diploma-e-retrato-de-uma-mulher-ou-estudante-universitario-com-um-sorriso-e-orgulho-ao-ar-livre-pessoa-do-sexo-feminino-animada-para-comemorar-o-sucesso-da-educacao-universitaria-e-o-futuro-no-evento-escolar_590464-184096.jpg"
+                            class="d-block w-100" alt="Imagem 8">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Formaturas</h5>
+                <p class="card-text">A emoção da conquista. Guarde para sempre o orgulho desta nova jornada.</p>
+            </div>
+            <div class="audio-container">
+                <audio controls>
+                    <source src="../Audios/audio2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="card">
+            <div id="carouselExample3" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://storage.alboom.ninja/sites/31390/albuns/672968/sessao-gravidez-coimbra-quinta-das-lagrimas-0005.jpg?t=1594289259"
+                            class="d-block w-100" alt="Imagem 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/1466/albuns/391084/nc1_4741.jpg?t=1550684101"
+                            class="d-block w-100" alt="Imagem 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/9331/media/evelyflor-01_bd9529e27603.jpg?t=1583183030"
+                            class="d-block w-100" alt="Imagem 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn-sites-images.46graus.com/files/photos/08786468/a8e8e31a-50c5-4e13-b559-b89f7e424960/_dsc3582-752x1024.jpg"
+                            class="d-block w-100" alt="Imagem 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.estudiosapienza.com.br/wp-content/uploads/2020/08/ensaio-fotografico-gestante-com-tecido.jpg"
+                            class="d-block w-100" alt="Imagem 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/9596/albuns/772781/dsc00899.jpg?t=1611172963"
+                            class="d-block w-100" alt="Imagem 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/37063/albuns/757362/samira-sessao-fotografica-gravida-gravidez-maternidade__9_.jpg?t=1608135780"
+                            class="d-block w-100" alt="Imagem 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://d82f92983534fe95e3e4-ff7b49411c2ac46e1b4f1feebd9a9ed0.ssl.cf1.rackcdn.com/PostImagem/49601/ensaio-fotograacutefico-de-gestante-no-campo-stephanie-kaacutessio-pedro-e-joatildeo-agrave-espera-de-tiago_o1gn8o25t11hdkh9d18kn1af61sv31n.jpg"
+                            class="d-block w-100" alt="Imagem 8">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Gravidez</h5>
+                <p class="card-text">A doce espera e a força da criação. Registre o amor que já cresce aqui dentro.</p>
+            </div>
+            <div class="audio-container">
+                <audio controls>
+                    <source src="../Audios/audio3.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="card">
+            <div id="carouselExample4" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://www.shutterstock.com/pt/blog/wp-content/uploads/sites/4/2017/07/featured-kids2.jpg"
+                            class="d-block w-100" alt="Imagem 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/5052/albuns/506020/16010_03_191.jpg?t=1566917806"
+                            class="d-block w-100" alt="Imagem 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://blog.santamonicarede.com.br/wp-content/uploads/2022/06/Como-incentivar-a-leitura-infantil-Conheca-5-dicas.jpeg"
+                            class="d-block w-100" alt="Imagem 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://storage.alboom.ninja/sites/187909/albuns/1352795/ensaioinfantil-fotografiartistica-ensaioexterno-ensaiofotografico-fotografo-22.jpg?t=1717446089"
+                            class="d-block w-100" alt="Imagem 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://pub-f5d0586f05c84fe88781bc7d59f52d11.r2.dev/4c672fb8-f88d-4c00-93af-97a54f35046b.jpeg"
+                            class="d-block w-100" alt="Imagem 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://st.depositphotos.com/1389359/52232/i/450/depositphotos_522327008-stock-photo-portrait-cute-little-girl-sits.jpg"
+                            class="d-block w-100" alt="Imagem 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.unimedceara.com.br/wp-content/uploads/2024/07/Unimed-Cear%C3%A1-Crescendo-saud%C3%A1vel-por-quanto-tempo-a-sua-crian%C3%A7a-deve-brincar-2.png"
+                            class="d-block w-100" alt="Imagem 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.istockphoto.com/id/1196411685/photo/beautiful-three-year-old-mixed-race-girl-smiling-and-playing-in-her-backyard-dressed-up.jpg?s=612x612&w=0&k=20&c=Ns9gfzZdxNq3mtzlY9GT8kTLFaaplURPk7LVNUL6Se4="
+                            class="d-block w-100" alt="Imagem 8">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample4"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample4"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Crianças</h5>
+                <p class="card-text">A pureza dos primeiros olhares e a energia de um mundo em descoberta.</p>
+            </div>
+            <div class="audio-container">
+                <audio controls>
+                    <source src="../Audios/audio4.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="card">
+            <div id="carouselExample5" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://cdn0.casamentos.com.br/article-vendor/8801/original/1280/jpg/vs-12_13_138801-1555981280.jpeg"
+                            class="d-block w-100" alt="Imagem 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.freepik.com/fotos-gratis/vestido-de-noiva-segurando-e-cheirando-buque-de-casamento_8353-12583.jpg?semt=ais_hybrid&w=740&q=80"
+                            class="d-block w-100" alt="Imagem 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://casamarela.com/wp-content/uploads/2021/04/2021_TENORIO_ROSA_CLARA_2.jpg"
+                            class="d-block w-100" alt="Imagem 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://static.wixstatic.com/media/daf591_a2c2bcbe9ebc43e1ad647a81c72db4c7~mv2.jpg/v1/fill/w_640,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/daf591_a2c2bcbe9ebc43e1ad647a81c72db4c7~mv2.jpg"
+                            class="d-block w-100" alt="Imagem 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.freepik.com/fotos-premium/preparacao-da-manha-de-noiva-noiva-feliz-e-sorridente-em-um-veu-branco-com-um-buque-de-casamento_130488-2082.jpg"
+                            class="d-block w-100" alt="Imagem 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.ivanabeaumond.com.br/vestidos-noiva/wp-content/uploads/photo-gallery/nathalia%20casamento%20vestido%20de%20noiva%20rj%20manga%20longa%20atelier%20ivana%20beaumond%20estilista%20(3).jpg"
+                            class="d-block w-100" alt="Imagem 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://novanoiva.com.br/wp-content/uploads/2023/04/LB011-FRENTE.jpg"
+                            class="d-block w-100" alt="Imagem 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn0.casamentos.com.br/article-real-wedding/389/3_2/960/jpg/3244787.jpeg"
+                            class="d-block w-100" alt="Imagem 8">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample5"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample5"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Noivas</h5>
+                <p class="card-text">O sim mais importante da sua vida. Cada detalhe, cada lágrima, eternizado com arte.
+                </p>
+            </div>
+            <div class="audio-container">
+                <audio controls>
+                    <source src="../Audios/audio5.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div class="card">
+            <div id="carouselExample6" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://cdn.prod.website-files.com/616d40df2ab95b424def1e10/627d247e9abdd636d3e92635_dia-internacional-da-familia.jpg"
+                            class="d-block w-100" alt="Imagem 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.cancaonova.com/cnimages/canais/uploads/sites/6/2008/06/formacao_1600x1200-familia-muito-mais-que-um-conjunto-de-pessoas.jpg"
+                            class="d-block w-100" alt="Imagem 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://comunhao.com.br/wp-content/uploads/2019/02/fam%C3%ADlia.jpg"
+                            class="d-block w-100" alt="Imagem 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.gov.br/mdh/pt-br/navegue-por-temas/observatorio-nacional-da-familia/carrossel/idosos-e-familia.jpg"
+                            class="d-block w-100" alt="Imagem 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Family_Portrait.jpg"
+                            class="d-block w-100" alt="Imagem 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.psicoactiva.com/wp-content/uploads/2023/01/familia-reconstituida.jpg"
+                            class="d-block w-100" alt="Imagem 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://s1.abcstatics.com/media/familia/2020/10/27/familia-reconstruida-U67876014064Aid-1248x698@abc.jpg"
+                            class="d-block w-100" alt="Imagem 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://comoumfarolquebrilha.com/wp-content/uploads/2015/05/famc3adlia-3.jpg"
+                            class="d-block w-100" alt="Imagem 8">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample6"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample6"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Famílias</h5>
+                <p class="card-text">Onde a vida acontece. O elo de amor que se fortalece a cada clique.</p>
+            </div>
+            <div class="audio-container">
+                <audio controls>
+                    <source src="../Audios/audio6.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-bloco">
+            <div class="footer-titulo">DOUGLAS MATOS <br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-camera-fill"
+                viewBox="0 0 16 16">
+                <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0" />
+            </svg>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

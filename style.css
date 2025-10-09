@@ -396,7 +396,7 @@ button.petshop:hover {
 }
 
 
-/*Cards - cards.html*/
+/*Cards*/
 
 body.pagina-cards {
     font-family: Arial, sans-serif;
@@ -433,7 +433,6 @@ body.pagina-cards {
     height: 400px;
     object-fit: cover;
     display: block;
-
 }
 
 .card-content {
