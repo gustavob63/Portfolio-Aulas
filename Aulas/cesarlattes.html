@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografia - César Lattes</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Geral */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            background-color: hsla(0, 0%, 0%, 0.253);
+        }
+
+        h1 {
+            color: rgba(39, 5, 94, 0.829);
+            text-align: center;
+            margin-top: 50px;
+            font-size: 55px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        h2 {
+            color: rgba(19, 4, 44, 0.849);
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        h3 {
+            color: rgba(39, 5, 94, 0.829);
+            font-size: 38px;
+            margin-top: 140px;
+        }
+
+        .conteiner-inicial {
+            background: hsla(0, 5%, 84%, 0.87);
+            padding: 100px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.753);
+            max-width: 1300px;
+            width: 100%;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .pagina {
+            color: white;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+        }
+
+        /* Foto de Perfil */
+
+        .foto-perfil {
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            border: 4px solid rgba(35, 3, 65, 0.822);
+            margin: 20px auto;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 4px 42px rgb(0, 0, 0);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .foto-perfil:hover {
+            transform: scale(1.05);
+            transition: all 0.5s ease-in-out;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        /* Informações */
+
+        .conteiner-informacoes {
+            background: rgba(255, 255, 255, 0.801);
+            padding: 2.65rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 820px;
+            width: 100%;
+            margin-top: 55px;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .conteiner-informacoes:hover {
+            transform: scale(1.05);
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .conteiner-informacoes li {
+            color: rgb(0, 0, 0);
+            text-align: justify;
+            font-size: 20px;
+        }
+
+        .conteiner-lista {
+            background: rgba(255, 255, 255, 0.801);
+            padding: 2.65rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 560px;
+            width: 100%;
+            margin-top: 55px;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .conteiner-lista:hover {
+            transform: scale(1.05);
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .conteiner-lista li {
+            color: rgb(0, 0, 0);
+            text-align: justify;
+            font-size: 20px;
+        }
+
+        .conteiner-texto {
+            background: rgba(255, 255, 255, 0.801);
+            padding: 2.65rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 1150px;
+            width: 100%;
+            margin-top: 55px;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .conteiner-texto:hover {
+            transform: scale(1.05);
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .bloco-lateral {
+            display: flex;
+            gap: 30px;
+            align-items: stretch;
+            justify-content: center;
+            margin-top: 0px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .imagem-lateral-inicio {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            width: 560px;
+            height: 500px;
+            margin-top: 55px;
+        }
+
+        .imagem-lateral-inicio:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .imagem-lateral-contribuicoes {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            width: 560px;
+            height: 350px;
+            margin-top: 55px;
+        }
+
+        .imagem-lateral-contribuicoes:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .imagem-lateral-carreira {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            width: 560px;
+            height: 300px;
+            margin-top: 55px;
+        }
+
+        .imagem-lateral-carreira:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .imagem-lateral-inicio {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            width: 560px;
+            height: 500px;
+            margin-top: 55px;
+        }
+
+        .imagem-lateral-inicio:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .imagem-lateral-reconhecimento {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            width: 560px;
+            height: 290px;
+            margin-top: 55px;
+        }
+
+        .imagem-lateral-reconhecimento:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .imagem-lateral {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="pagina">
+    <main class="conteiner-inicial">
+        <section>
+            <img src="https://i.pinimg.com/1200x/c0/f3/a2/c0f3a252fa95dd86013aa07e00bda991.jpg" alt="Foto de perfil"
+                class="foto-perfil">
+
+            <h1>César Lattes</h1>
+            <h2>O Cientista que Colocou o Brasil na História da Física</h2>
+
+            <div class="bloco-lateral">
+
+                <ul class="conteiner-informacoes">
+                    <li><b>Nome completo:</b> César Mansueto Giulio Lattes</li><br>
+                    <li><b>Data de nascimento:</b> 11 de julho de 1924</li><br>
+                    <li><b>Local de nascimento:</b> Curitiba, Paraná, Brasil</li><br>
+                    <li><b>Data de falecimento:</b> 8 de março de 2005</li><br>
+                    <li><b>Nacionalidade:</b> Brasileira</li><br>
+                    <li><b>Profissão:</b> Físico experimental</li><br>
+                    <li><b>Áreas de atuação:</b> Física nuclear e física de partículas</li><br>
+                    <li><b>Formação:</b> Graduado em Física pela Universidade de São Paulo (USP), em 1943</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h3>────────⊹⊱ Quem foi César Lattes? ⊰⊹────────</h3>
+            <div class="conteiner-texto">
+                <p>César Mansueto Giulio Lattes (1924–2005) foi um dos mais importantes físicos brasileiros e
+                    um dos fundadores do <b>Centro Brasileiro de Pesquisas Físicas (CBPF)</b>. É considerado <b>um dos maiores
+                    cientistas do Brasil</b>,
+                    conhecido mundialmente por sua contribuição para a descoberta do <b>méson pi (píon)</b>
+                    — uma das partículas fundamentais da física nuclear.</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>────────⊹⊱ Principais Contribuições ⊰⊹────────</h3>
+
+            <div class="bloco-lateral">
+
+                <ul class="conteiner-lista">
+                    <li><b>Descoberta do méson pi (píon)</b>: Lattes foi o <b>coautor da descoberta</b>, feita em 1947,
+                        que confirmou previsões teóricas sobre a estrutura da matéria.</li><br>
+                    <li>Essa descoberta ajudou a consolidar a <b>física de partículas modernas</b> e
+                        abriu caminho para o desenvolvimento dos aceleradores.</li><br>
+                    <li>Ele também foi pioneiro no uso de <b>placas fotográficas nucleares</b>,
+                        técnica essencial para detectar partículas subatômicas.</li>
+                </ul>
+
+                <div class="imagem-lateral-contribuicoes">
+                    <img src="https://i.pinimg.com/1200x/af/a5/6a/afa56a86fefdc592b23f1f6ce5b32d6d.jpg" alt="César Lattes" class="imagem-lateral">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>────────⊹⊱ Formação e Carreira ⊰⊹────────</h3>
+
+            <div class="bloco-lateral">
+
+                <div class="imagem-lateral-carreira">
+                    <img src="https://i.pinimg.com/736x/fb/bf/ba/fbbfba684501479c1a1042874e67af16.jpg" alt="César Lattes" class="imagem-lateral">
+                </div>
+
+                <ul class="conteiner-lista">
+                    <li>Formou-se em <b>Física pela Universidade de São Paulo (USP)</b> em 1943.</li><br>
+                    <li>Trabalhou no <b>Laboratório de Física Cósmica de Bristol (Inglaterra)</b>,
+                        onde fez a descoberta do méson.</li><br>
+                    <li>Atuou em instituições de destaque como a <b>USP</b>,
+                        o <b>CBPF</b> e a <b>Unicamp</b>, onde ajudou a estruturar o ensino e a pesquisa científica no Brasil.</li>
+                </ul>
+                
+            </div>
+        </section>
+
+        <section>
+            <h3>────────⊹⊱ Reconhecimentos ⊰⊹────────</h3>
+            <div class="bloco-lateral">
+
+                <ul class="conteiner-lista">
+                    <li>Foi indicado várias vezes ao <b>Prêmio Nobel de Física</b>.</li><br>
+                    <li>Recebeu prêmios nacionais e internacionais, como o <b>Prêmio Einstein da UNESCO (1950)</b>.</li><br>
+                    <li>O <b>Laboratório Nacional de Luz Síncrotron (LNLS)</b>, em Campinas, leva o nome dele:
+                        <b>Laboratório de Luz Síncrotron César Lattes.</b></li>
+                </ul>
+
+                <div class="imagem-lateral-reconhecimento">
+                    <img src="https://i.pinimg.com/1200x/e2/fb/07/e2fb0726220761580b8c56f729f2b57d.jpg" alt="César Lattes" class="imagem-lateral">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>────────⊹⊱ Legado ⊰⊹────────</h3>
+            <div class="bloco-lateral">
+
+                <div class="conteiner-texto">
+                    <p>César Lattes deixou um legado enorme para a ciência brasileira. <br>
+                        Ele foi <b>um símbolo da valorização da pesquisa nacional</b>, inspirando gerações de cientistas e
+                        professores. <br>
+                        Seu trabalho mostrou que o Brasil pode ser protagonista em descobertas científicas de impacto
+                        mundial.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
