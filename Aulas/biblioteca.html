@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            position: relative;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #000000;
+            font-size: 37px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #livros-infantis {
+            background-color: #f8f9fa;
+        }
+
+        #didaticos {
+            background-color: #ffffff;
+        }
+
+        #cursos {
+            background-color: #f8f9fa;
+        }
+
+        #matematica {
+            background-color: #ffffff;
+        }
+
+        #fisica {
+            background-color: #f8f9fa;
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+            color: #093e8d !important;
+        }
+
+        .carousel-item {
+            height: 80vh;
+            min-height: 300px;
+            background: #777;
+            color: white;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            max-height: 100px;
+        }
+
+        .carousel-caption h5 {
+            font-size: 30px;
+        }
+
+        .card-img-top {
+            height: 550px;
+        }
+
+        .card-body h5 {
+            font-size: 25px;
+            color: rgb(0, 0, 0);
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .card {
+            transition: all 0.3s ease-in-out;
+            background: rgba(183, 201, 223, 0.836);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+        }
+
+        .btn {
+            background: rgba(7, 41, 104, 0.856);
+        }
+
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="70" tabindex="0">
+
+
+    <!-- MENU -->
+
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Biblioteca Digital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#livros-infantis">Infantis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#didaticos">Didáticos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cursos">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#matematica">Matemática</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fisica">Física</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- CARROSEL DE DESTAQUE -->
+
+    <div id="carouselBiblioteca" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselBiblioteca" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselBiblioteca" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselBiblioteca" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+
+            <div class="carousel-item active"
+                style="background-image: url('https://i.pinimg.com/736x/0f/66/c1/0f66c18b8ef49cf51225a13b55e21f4b.jpg');">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>BEM-VINDO À NOSSA BIBLIOTECA DIGITAL</h5>
+                    <p>Explore milhares de livros em todas as categorias.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item"
+                style="background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-star-cute-mother-and-baby-baby-products-milk-powder-taobao-banner-image_176577.jpg');">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>SEÇÃO INFANTIL</h5>
+                    <p>Histórias encantadoras para as crianças.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item"
+                style="background-image: url('https://i.pinimg.com/1200x/a2/90/2b/a2902b59bc69558d9a86d66aa8fbba33.jpg');">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>APRENDA MATEMÁTICA E FÍSICA</h5>
+                    <p>Livros didáticos e de curso para todos os níveis.</p>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBiblioteca" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselBiblioteca" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+
+    <!-- SEÇÕES -->
+
+    <!-- LIVROS INFANTIS -->
+
+    <main class="container">
+
+        <section id="livros-infantis">
+            <h2>INFANTIS</h2>
+            <p>Encontre uma seleção mágica de contos de fadas, fábulas ilustradas e aventuras leves, ideal para encantar
+                os pequenos leitores.</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/d7/85/88/d78588c0bc85c87458475abea4c57db8.jpg" class="card-img-top"
+                            alt="O Menino Maluquinho">
+                        <div class="card-body">
+                            <h5 class="card-title">O Menino Maluquinho</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/88/3a/fa/883afab75e9493e87854f5b98e8fd6f4.jpg" class="card-img-top"
+                        alt="Alice no País das Maravilhas">
+                        <div class="card-body">
+                            <h5 class="card-title">Alice no País das Maravilhas</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/97/32/e6/9732e607664c468ad5569f36c0e97d00.jpg" class="card-img-top"
+                            alt="O Pequeno Príncipe Preto">
+                        <div class="card-body">
+                            <h5 class="card-title">O Pequeno Príncipe Preto</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/c9/d9/8c/c9d98cbfd887d516ca6c3f02f1db0ecc.jpg" class="card-img-top"
+                            alt="Diário de um Banana">
+                        <div class="card-body">
+                            <h5 class="card-title">Diário de um Banana</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/fd/4a/7a/fd4a7afda9a5012d6f3dfe2775ada5e8.jpg" class="card-img-top"
+                            alt="Harry Potter">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/ef/dd/f4/efddf42f572b694a8627c2ef6e7eb1ee.jpg" class="card-img-top"
+                            alt="Amiga Ursa">
+                        <div class="card-body">
+                            <h5 class="card-title">Amiga Ursa</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- LIVROS DIDÁTICOS -->
+
+        <section id="didaticos">
+            <h2>DIDÁTICOS</h2>
+            <p>Recursos educacionais para estudantes de todas as idades — do ensino básico ao médio.</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/de/a1/db/dea1db1493a875aef6ac22d18df8f0c6.jpg" class="card-img-top"
+                            alt="Trajetórias - Lingua Portuguesa">
+                        <div class="card-body">
+                            <h5 class="card-title">Trajetórias - Lingua Portuguesa</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/ce/e5/a6/cee5a65211f48e4ebd2b039c3bdcb69a.jpg" class="card-img-top"
+                            alt="História - Sociedade & Cidadania">
+                        <div class="card-body">
+                            <h5 class="card-title">História - Sociedade & Cidadania</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/3a/cc/0d/3acc0d37d9a3a5486874c74d9b904066.jpg" class="card-img-top"
+                            alt="Araribá Mais Geografia">
+                        <div class="card-body">
+                            <h5 class="card-title">Araribá Mais Geografia</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/86/38/bf/8638bf770111a35e95bf70880f0bf454.jpg" class="card-img-top"
+                            alt="Ciências - Vida & Universo">
+                        <div class="card-body">
+                            <h5 class="card-title">Ciências - Vida & Universo</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/61/c6/61/61c6616e0acaeba828aa0f9f981c00cc.jpg" class="card-img-top"
+                            alt="Português - Linguagens">
+                        <div class="card-body">
+                            <h5 class="card-title">Português - Linguagens</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/ab/d6/05/abd605b0560d229fd40d05e6f4c30807.jpg" class="card-img-top"
+                            alt="Arte Por Toda Parte">
+                        <div class="card-body">
+                            <h5 class="card-title">Arte Por Toda Parte</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LIVROS DE CURSOS -->
+
+        <section id="cursos">
+            <h2>CURSOS</h2>
+            <p>Material de apoio para cursos técnicos, universitários e profissionalizantes.</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://www.grupogen.com.br/media/catalog/product/9/7/9786559648467.3.png?optimize=low&bg-color=255,255,255&fit=bounds&height=1000&width=700&canvas=700:1000" class="card-img-top"
+                            alt="Direito Processual Civil">
+                        <div class="card-body">
+                            <h5 class="card-title">Direito Processual Civil</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://www.jurua.com.br/images/prod/b/22/22728.jpg?ts=20201205" class="card-img-top"
+                            alt="Filosofia do Direito">
+                        <div class="card-body">
+                            <h5 class="card-title">Filosofia do Direito</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://fl-storage.bookinfometadados.com.br/uploads/book/first_cover/800_9786555186673.png" class="card-img-top"
+                            alt="Direito Administrativo">
+                        <div class="card-body">
+                            <h5 class="card-title">Direito Administrativo</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://assets.verisoft.com.br/education/contents/48e16fdf-7cef-4cf1-b5ee-a0f3121c78eb_1024.jpg" class="card-img-top"
+                            alt="Leitura Dinâmica">
+                        <div class="card-body">
+                            <h5 class="card-title">Leitura Dinâmica</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://livrariapublica.com.br/capa/curso-de-ingles-completo-e-book-master-pdf-B097NRZB73.webp" class="card-img-top"
+                            alt="Inglês Completo">
+                        <div class="card-body">
+                            <h5 class="card-title">Inglês Completo</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://m.media-amazon.com/images/I/81CYHiF-HqL._AC_UF1000,1000_QL80_.jpg" class="card-img-top"
+                            alt="Processo Penal">
+                        <div class="card-body">
+                            <h5 class="card-title">Processo Penal</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LIVROS DE MATEMÁTICA -->
+
+        <section id="matematica">
+            <h2>MATEMÁTICA</h2>
+            <p>Livros para reforçar matemática básica, álgebra, cálculo, estatística e muito mais.</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/f5/38/54/f53854e4ad50538b49715abe8dcee7af.jpg" class="card-img-top"
+                            alt="História da Matemática">
+                        <div class="card-body">
+                            <h5 class="card-title">História da Matemática</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/1200x/64/ac/4c/64ac4c8bd6a43005ea8bb66636e22ae2.jpg" class="card-img-top"
+                            alt="5 Ideas de Matemática que Você Precisa Conhecer">
+                        <div class="card-body">
+                            <h5 class="card-title">5 Ideas de Matemática que Você Precisa Conhecer</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/e3/19/fb/e319fb261835ff0585f5dd55144e63bd.jpg" class="card-img-top"
+                            alt="Matemática para Pessoas com Pressa">
+                        <div class="card-body">
+                            <h5 class="card-title">Matemática para Pessoas com Pressa</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/7a/db/cd/7adbcd30ea54db405493111bb6559a17.jpg" class="card-img-top"
+                            alt="Introdução à Lógica Matemática">
+                        <div class="card-body">
+                            <h5 class="card-title">Introdução à Lógica Matemática</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/eb/8e/90/eb8e90e0065dc326ff414c398cb29773.jpg" class="card-img-top"
+                            alt="Em Busca do Infinito">
+                        <div class="card-body">
+                            <h5 class="card-title">Em Busca do Infinito</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/f0/6e/d5/f06ed53675242b4243d1776a62ea7516.jpg" class="card-img-top"
+                            alt="Por que Surgem os Números Primos">
+                        <div class="card-body">
+                            <h5 class="card-title">Por que Surgem os Números Primos</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LIVROS DE FÍSICA -->
+
+        <section id="fisica">
+            <h2>FÍSICA</h2>
+            <p>Explore os conceitos de mecânica, termodinâmica, eletromagnetismo e física moderna com nossas obras
+                especializadas.</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://livrariaeditus.uesc.br/DynamicItems/Catalog/a4d3affa-ae62-49db-8bd7-c28b235405fc9788568576748_W270.jpg" class="card-img-top"
+                            alt="Física Quântica">
+                        <div class="card-body">
+                            <h5 class="card-title">Física Quântica</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv_dMpmyYnEMyqSc_3A_URrmZOf8MK7iH52AKpOoS6Ju9QJKicXrjGbvvdHrCjkpYGyBQR0fiv1UhvJOUgeckf2TM1Y4_6TEaWvEXGpzal2anOnWFFyRO7f8Snuh-746z6_p5g9RaXlIs/s1600/COD72-fisica1_01.jpg" class="card-img-top"
+                            alt="Capa do livro de física 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Física I Mecânica</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://cdn.awsli.com.br/2500x2500/638/638756/produto/759381707b9a0cc854.jpg" class="card-img-top"
+                            alt="Capa do livro de física 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Física - Contexto & Aplicações</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://a-static.mlcdn.com.br/800x600/livro-fisica-conceitual/livrdavila/851503/5a361cc1c951cfbebebe39a8d5977035.jpg" class="card-img-top"
+                            alt="Capa do livro de física 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Física Conceitual</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://m.media-amazon.com/images/I/614F8M75QxL._AC_UF1000,1000_QL80_.jpg" class="card-img-top"
+                            alt="Capa do livro de física 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Física para Cientistas e Engenheiros</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="http://ofitexto.vteximg.com.br/arquivos/ids/168430/fisica-com-aplicacao-tecnologica-vol-1-mecanica.jpg?v=637947142000470000" class="card-img-top"
+                            alt="Capa do livro de física 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Física com Aplicação Tecnológica</h5>
+                            <a href="#" class="btn btn-primary">Ler agora</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="bg-light text-center text-muted py-4">
+        <div class="cor-rodape">
+            <div class="container">
+                <p> © gustavobarbosa</p>
+                <p><small>Desenvolvido para promover a leitura e o aprendizado.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
